@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>welcome</h1>
+    <script>
+  /*
+====================================
+   |   |🌟 LEVEL 1: Basics
+====================================
+*/
+
+// Q1. What is an array in JavaScript?
+// An array is a special type of variable that stores multiple values in one place.
+// Each value in an array is assigned an index (starting from 0).
+
+// Real-life examples of arrays:
+let students = ["Alice", "Bob", "Charlie"];     // List of student names
+let prices = [20, 30, 40, 50];                  // Product prices
+let temperatures = [22, 24, 20, 19, 23];        // Daily temperatures
+
+console.log("Q1: Example Arrays:");
+console.log(students, prices, temperatures);
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q2. How do you create an array? (Three ways)
+
+// 1️⃣ Using array literal
+let fruits = ["apple", "banana", "mango"];
+
+// 2️⃣ Using the Array constructor
+let numbers = new Array(10, 20, 30, 40);
+
+// 3️⃣ Creating an empty array and adding later
+let colors = [];
+colors[0] = "red";
+colors[1] = "blue";
+colors[2] = "green";
+
+console.log("Q2: Created Arrays:", fruits, numbers, colors);
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q3. What data types can you store in an array?
+// Arrays can store numbers, strings, booleans, objects, or even other arrays.
+
+let mixedArray = [42, "Hello", true, false, "JavaScript"];
+console.log("Q3: Mixed Array:", mixedArray);
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q4. Difference between an array and a single variable
+// A single variable holds one value, while an array can hold multiple values.
+
+let age = 25;                      // single variable
+let ageList = [18, 22, 25, 30];    // array with multiple values
+
+console.log("Q4: Single variable:", age);
+console.log("Q4: Array of ages:", ageList);
+console.log("----------------------------------");
+
+/*
+====================================
+   🧭 LEVEL 2: Access & Modify
+====================================
+*/
+
+// Q5. Access specific items from an array
+let cars = ["Toyota", "Honda", "Ford", "BMW"];
+console.log("Q5: First car:", cars[0]);
+console.log("Q5: Last car:", cars[cars.length - 1]);
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q6. Change a value in an array
+cars[2] = "Mercedes"; // change "Ford" to "Mercedes"
+console.log("Q6: Updated cars array:", cars);
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q7. What does .length do?
+console.log("Q7: Number of cars:", cars.length);
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q8. Add a new element to the end without using .push()
+cars[cars.length] = "Tesla";
+console.log("Q8: After adding new element:", cars);
+console.log("----------------------------------");
+
+/*
+====================================
+    🔁 LEVEL 3: Loops & Arrays
+====================================
+*/
+
+// Q9. Print all elements in an array using 3 loops
+let fruitsList = ["Apple", "Banana", "Cherry", "Date"];
+
+// 1️⃣ for loop
+console.log("Q9: Using for loop:");
+for (let i = 0; i < fruitsList.length; i++) {
+  console.log(fruitsList[i]);
+}
+
+// 2️⃣ for...of loop
+console.log("Q9: Using for...of loop:");
+for (let fruit of fruitsList) {
+  console.log(fruit);
+}
+
+// 3️⃣ while loop
+console.log("Q9: Using while loop:");
+let i = 0;
+while (i < fruitsList.length) {
+  console.log(fruitsList[i]);
+  i++;
+}
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q10. Print all numbers in an array multiplied by 2
+let nums = [1, 2, 3, 4, 5];
+console.log("Q10: Numbers multiplied by 2:");
+for (let n of nums) {
+  console.log(n * 2);
+}
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q11. Print names in uppercase
+let names = ["alice", "bob", "charlie"];
+console.log("Q11: Names in uppercase:");
+for (let name of names) {
+  console.log(name.toUpperCase());
+}
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q12. Count items without using .length
+let countArray = ["a", "b", "c", "d", "e"];
+let count = 0;
+for (let item of countArray) {
+  count++;
+}
+console.log("Q12: Counted items manually:", count);
+console.log("----------------------------------");
+
+// ---------------------------------------------------------------
+
+// Q13. Find the maximum number in an array
+let numberList = [10, 5, 8, 20, 15];
+let max = numberList[0];
+
+for (let num of numberList) {
+  if (num > max) {
+    max = num;
+  }
+}
+console.log("Q13: Maximum number:", numberList);
+console.log("----------------------------------");
+
+/*
+====================================
+✅ END OF EXERCISE
+====================================
+*/
+
+console.log("Maximum number:", max); // 20
+
+
+/*
+========================================
+        🌟 LEVEL 4: Array Methods
+========================================
+*/
+
+// Q14. Basic Array Operations: push, pop, shift, unshift
+let Fruits = ["apple", "banana", "mango"];
+console.log("Original array:", fruits);
+
+// .push() ➡️ adds item(s) to the END
+fruits.push("orange");
+console.log(".push():", fruits);
+
+// .pop() ➡️ removes the LAST item
+fruits.pop();
+console.log(".pop():", fruits);
+
+// .shift() ➡️ removes the FIRST item
+fruits.shift();
+console.log(".shift():", fruits);
+
+// .unshift() ➡️ adds item(s) to the BEGINNING
+fruits.unshift("grape");
+console.log(".unshift():", fruits);
+console.log("----------------------------------");
+
+
+// Q15. Find position of an item
+console.log("Index of 'mango':", fruits.indexOf("mango"));
+console.log("Includes 'apple'?:", fruits.includes("apple"));
+console.log("----------------------------------");
+
+
+// Q16. .slice() vs .splice()
+let animals = ["cat", "dog", "rabbit", "cow", "goat"];
+console.log("Original:", animals);
+
+// .slice(start, end) ➡️ copies a portion (non-destructive)
+let sliced = animals.slice(1, 3);
+console.log(".slice(1,3):", sliced);
+console.log("After slice:", animals);
+
+// .splice(start, deleteCount, newItems...) ➡️ removes/adds (modifies original)
+let spliced = animals.splice(2, 1, "sheep");
+console.log(".splice(2,1,'sheep'):", spliced);
+console.log("After splice:", animals);
+console.log("----------------------------------");
+
+
+// Q17. Combine arrays (.concat and spread operator)
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+let combined1 = arr1.concat(arr2);
+let combined2 = [...arr1, ...arr2];
+console.log(".concat():", combined1);
+console.log("Spread operator:", combined2);
+console.log("----------------------------------");
+
+
+// Q18. Check if variable is an array
+console.log("Is fruits an array?", Array.isArray(fruits));
+console.log("Is 'hello' an array?", Array.isArray("hello"));
+console.log("----------------------------------");
+
+
+// Q19. Reverse an array
+let Nums = [1, 2, 3, 4, 5];
+nums.reverse();
+console.log("Reversed:", nums);
+console.log("----------------------------------");
+
+
+// Q20. Sort strings alphabetically
+let cities = ["Tokyo", "Berlin", "London", "Paris"];
+cities.sort();
+console.log("Sorted alphabetically:", cities);
+console.log("----------------------------------");
+
+
+// Q21. Sort numbers correctly (using compare function)
+let Numbers = [5, 10, 1, 20, 3];
+numbers.sort((a, b) => a - b); // ascending
+console.log("Sorted numerically:", numbers);
+console.log("----------------------------------");
+
+
+// Q22. Convert array to string
+let pets = ["dog", "cat", "bird"];
+console.log(".toString():", pets.toString());
+console.log(".join(' - '):", pets.join(" - "));
+console.log("----------------------------------");
+
+
+// Q23. Remove specific item by value
+let removeList = ["pen", "pencil", "book", "eraser"];
+let index = removeList.indexOf("book");
+if (index !== -1) {
+  removeList.splice(index, 1);
+}
+console.log("After removing 'book':", removeList);
+console.log("----------------------------------");
+
+
+// Q24. Add multiple elements at once
+let tools = ["hammer"];
+tools.push("screwdriver", "wrench");
+console.log(".push() multiple:", tools);
+let newTools = tools.concat(["pliers", "saw"]);
+console.log(".concat() multiple:", newTools);
+console.log("----------------------------------");
+
+
+// Q25. Fill an array with the same value
+let filled = new Array(5).fill("X");
+console.log(".fill():", filled);
+console.log("----------------------------------");
+
+
+// Q26. Find first and last positions of a repeated element
+let letters = ["a", "b", "c", "a", "d", "a"];
+console.log("First index of 'a':", letters.indexOf("a"));
+console.log("Last index of 'a':", letters.lastIndexOf("a"));
+console.log("----------------------------------");
+
+
+
+/*
+========================================
+        🚀 LEVEL 5: Transforming Arrays
+========================================
+*/
+
+// Q27. Combine all elements into one string
+let words = ["JavaScript", "arrays", "are", "powerful"];
+console.log(".join(' '):", words.join(" "));
+console.log("----------------------------------");
+
+
+// Q28. Add 10 to each number using .map()
+let nums2 = [5, 10, 15, 20, 25];
+let plusTen = nums2.map(num => num + 10);
+console.log("Original:", nums2);
+console.log("After +10:", plusTen);
+console.log("----------------------------------");
+
+
+// Q29. Explain .map(), .filter(), .reduce()
+/*
+.map() → transforms each element and returns a NEW array.
+.filter() → keeps only elements that meet a condition.
+.reduce() → combines all elements into a single value.
+*/
+let arr = [1, 2, 3, 4, 5];
+console.log(".map(x*2):", arr.map(x => x * 2));
+console.log(".filter(x>2):", arr.filter(x => x > 2));
+console.log(".reduce(sum):", arr.reduce((a, b) => a + b, 0));
+console.log("----------------------------------");
+
+
+// Q30. Filter ages above 18
+let ages = [12, 17, 19, 22, 15, 30];
+let adults = ages.filter(age => age > 18);
+console.log("Adults:", adults);
+console.log("----------------------------------");
+
+
+// Q31. Reduce to calculate total sum
+let Prices = [10, 20, 30, 40];
+let total = prices.reduce((sum, value) => sum + value, 0);
+console.log("Total price:", total);
+console.log("----------------------------------");
+
+
+// Q32. Find first value meeting a condition
+let even = arr.find(x => x % 2 === 0);
+console.log(".find(): first even number:", even);
+// difference: .find() returns the FIRST match, .filter() returns ALL matches.
+console.log("----------------------------------");
+
+
+// Q33. Find index of first value meeting condition
+let indexEven = arr.findIndex(x => x % 2 === 0);
+console.log(".findIndex():", indexEven);
+console.log("----------------------------------");
+
+
+// Q34. Test if all items pass condition (.every)
+let allPositive = arr.every(x => x > 0);
+console.log("All numbers > 0:", allPositive);
+console.log("----------------------------------");
+
+
+// Q35. Test if at least one item passes condition (.some)
+let hasEven = arr.some(x => x % 2 === 0);
+console.log("Has even number:", hasEven);
+console.log("----------------------------------");
+
+
+// Q36. Flatten nested arrays (.flat)
+let nested = [1, [2, 3], [4, [5, 6]]];
+let flatArray = nested.flat(2); // depth = 2
+console.log("Flattened:", flatArray);
+console.log("----------------------------------");
+
+
+// Q37. Transform all to uppercase/lowercase
+let nAmes = ["alice", "bob", "carol"];
+let upper = names.map(n => n.toUpperCase());
+let lower = names.map(n => n.toLowerCase());
+console.log("Uppercase:", upper);
+console.log("Lowercase:", lower);
+console.log("----------------------------------");
+
+
+// Q38. Remove duplicates (.filter + indexOf OR Set)
+let dupes = [1, 2, 2, 3, 4, 4, 5];
+let unique = [...new Set(dupes)];
+console.log("Unique values:", unique);
+console.log("----------------------------------");
+
+
+// Q39. Copy an array (.slice or spread)
+let original = ["a", "b", "c"];
+let copy1 = original.slice();
+let copy2 = [...original];
+copy1.push("d");
+console.log("Original:", original);
+console.log("Copy (slice):", copy1);
+console.log("Copy (spread):", copy2);
+// slice/spread create independent copies, not linked to original
+console.log("----------------------------------");
+
+
+// Q40. Use .reduce() for total and average
+let numbers3 = [10, 20, 30, 40, 50];
+let sum = numbers3.reduce((a, b) => a + b, 0);
+let average = sum / numbers3.length;
+console.log("Total:", sum, "Average:", average);
+console.log("----------------------------------");
+
+
+// Q41. Use .map() + .filter() together
+let numList = [1, 2, 3, 4, 5, 6];
+let evenDoubled = numList.filter(n => n % 2 === 0).map(n => n * 2);
+console.log("Even numbers doubled:", evenDoubled);
+console.log("----------------------------------");
+
+
+// Q42. Check if a specific word exists ignoring case
+let wordList = ["Apple", "Banana", "Cherry"];
+let target = "banana";
+let exists = wordList.some(w => w.toLowerCase() === target.toLowerCase());
+console.log("Exists ignoring case:", exists);
+console.log("----------------------------------");
+
+
+// Q43. Use .reduce() to make a sentence
+let sentenceWords = ["Learning", "arrays", "is", "fun"];
+let sentence = sentenceWords.reduce((a, b) => a + " " + b);
+console.log("Sentence:", sentence);
+console.log("----------------------------------");
+
+console.log("🎉 End of Level 4 & 5 Arrays Practice!");
+
+    </script>
+</body>
+</html>
+
