@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins",sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: #4e5069;
+    }
+    .container{
+        position: relative;
+        width: 256px;
+        height: 256px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container h1{
+        position: absolute;
+       left: 0;
+       width: 32px;
+       height: 6px;
+       background-color: antiquewhite;
+       border-radius: 8px;
+       transform-origin: 128px;
+       transform: scale(2.2) rotate(calc(var(--i) * 360deg / 50));
+        font-size: 2.5em;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+    }
+</style>
+<body>
+    <div class="container">
+  <h1><span>login</span></h1>
+    <form action="login" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <a href="">forget a password</a>
+        <input type="submit" value="Login">
+        <a href="">signup</a>
+    </form>
+        </div>
+</body>
+</html>

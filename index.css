@@ -1,0 +1,9 @@
+button{
+    position: relative;
+    background-color: aqua;
+    width: 10vw;
+    height: 5vh;
+    margin-left: 20px;
+    top: 20px;
+    border-radius: 10px;
+}
